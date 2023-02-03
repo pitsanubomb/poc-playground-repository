@@ -1,0 +1,12 @@
+{
+  "name": "poc-playground-repository",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "repository": "git@github.com:pitsanubomb/poc-playground-repository.git",
+  "author": "cgloveut <pitsanubomb@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "sequelize": "^6.28.0",
+    "sqlite3": "^5.1.4"
+  }
+}
