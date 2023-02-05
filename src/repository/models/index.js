@@ -1,10 +1,10 @@
 const { Model } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const Repository = require('../../config/repository');
+const DB = require('../../config/db');
 
 const basename = path.basename(__filename);
-const sequelize = new Repository('sqlite::memory:');
+const sequelize = new DB('sqlite::memory:');
 
 class InjectModel extends Model {}
 
@@ -23,7 +23,6 @@ fs.readdirSync(__dirname)
       file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js'
   )
   .forEach((file) => {
-    /* eslint-disable-next-line global-require, import/no-dynamic-require */
     const modelClass = require(path.join(__dirname, file));
     models[modelClass.name] = injectModel(modelClass);
   });
